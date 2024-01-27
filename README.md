@@ -4,4 +4,4 @@
 <h1>Step 1: Learning NodeJs[From Day 3 to </h1>
   I) Installing Node then 'npm init' -> add package.json <br>
   II) Basic of JS:<br>
-  /t i) forEach & for in loop <br>
+        i) forEach & for in loop <br>
