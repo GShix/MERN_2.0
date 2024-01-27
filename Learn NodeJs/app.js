@@ -1,20 +1,15 @@
-//forIn loop
-// var person = {
-//     age: 12,
-//     name: "hai"
-// };
-// for(var key in person){
-//     // person[key];
-// }
-// console.log(key, person[key])
+// const app = require("express")();
 
-//forEach loop
-// var a =[1,4,3]
-// a.forEach(function(val){
-//        console.log(val+2);
-//     })
+const dambar = require("express");
+const app = dambar();
 
-//Callback function
-setTimeout(() => {
-    console.log("HI")
-}, 2000);
+app.get("/", (req,res)=>{
+    res.send("Hi, I am Dambar Sing");
+})
+app.get("/dambar", (req,res)=>{
+    res.send("You are interested on Dambar, right?");
+})
+
+app.listen(2000, (req,res)=>{
+    console.log("Hi, I am Node JS")
+})
