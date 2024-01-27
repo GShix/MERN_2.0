@@ -9,7 +9,12 @@
 // console.log(key, person[key])
 
 //forEach loop
-var a =[1,4,3]
-a.forEach(function(val){
-       console.log(val+2);
-    })
+// var a =[1,4,3]
+// a.forEach(function(val){
+//        console.log(val+2);
+//     })
+
+//Callback function
+setTimeout(() => {
+    console.log("HI")
+}, 2000);
