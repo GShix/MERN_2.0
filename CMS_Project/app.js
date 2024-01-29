@@ -1,4 +1,9 @@
-const  app = require("express")();
+const  express = require("express");
+const app = express();
+
+//Middleware Setup
+app.use(express.json());
+app.use(express.urlencoded({extended:true})); //Express middleware is used to parse incoming JSON and URL-encoded data
 
 // const mongoose = require("mongoose");
 
@@ -8,6 +13,7 @@ const  app = require("express")();
     // })
     
 const { connectDatabase } = require("./database/database"); //Imported through exports.connectDatabase
+const Blog = require("./model/blogModel");
 
 connectDatabase();
 
@@ -15,6 +21,22 @@ app.get("/",(req,res)=>{
     res.json({
         status:200,
         message: "You are in Home Page"
+    })
+})
+
+app.post("/createBlog",async(req,res)=>{
+    // console.log(req.body)
+    const title =req.body.title;
+    const subTitle = req.body.subTitle;
+    const description = req.body.description;
+    await Blog.create({
+        title: title,
+        subTitle: subTitle,
+        description: description
+    })
+    res.json({
+        status: 200,
+        message: "The createBlog API is created successfully"
     })
 })
 app.listen(3000,(req,res)=>{
