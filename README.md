@@ -19,9 +19,9 @@ The MERN stack combines these four technologies to create full-stack web applica
   I) Installing Node then 'npm init' -> add package.json <br>
   II) Basic of JS:<br>
         i) forEach & for in loop <br>
-  III) Installing Express -> .get and .listen - listners
-  IV) Installing nodemon -> to automate the node app.js -> npm start
-  V) Installing mongoose -> to use MongoDB -> It acts as a mediater bet MongoDB and user
-        i) connecting MongoDB database ->then saving to a database folder -> to import in future
+  III) Installing Express -> .get and .listen - listners <br>
+  IV) Installing nodemon -> to automate the node app.js -> npm start <br>
+  V) Installing mongoose -> to use MongoDB -> It acts as a mediater bet MongoDB and user <br>
+        i) connecting MongoDB database ->then saving to a database folder -> to import in future <br>
         
-  VI) Creating Schema -> Model -> importing for future
+  VI) Creating Schema -> Model -> importing for future<br>
