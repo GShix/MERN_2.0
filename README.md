@@ -12,7 +12,7 @@
 
 The MERN stack combines these four technologies to create full-stack web applications where MongoDB serves as the database, Express.js handles server-side logic and routing, React.js manages the frontend user interface, and Node.js provides the runtime environment for running JavaScript code on the server-side.
 
-
+<h1>Activities</h1>
 <strong>Day 1:</strong> How website works <br>
 <strong>Day 2:</strong> API, Status Code, HTTP Verbs (postman)
 <h1>Step 1: Learning NodeJs[From Day 3 to </h1>
