@@ -25,3 +25,4 @@ The MERN stack combines these four technologies to create full-stack web applica
         i) connecting MongoDB database ->then saving to a database folder -> to import in future <br>
         
   VI) Creating Schema -> Model -> importing for future<br>
+  VII) Creating GET API for single blog and all blog
