@@ -24,6 +24,7 @@ app.get("/",(req,res)=>{
     })
 })
 
+
 app.post("/createBlog",async(req,res)=>{
     // console.log(req.body)
     const title =req.body.title;
@@ -39,6 +40,60 @@ app.post("/createBlog",async(req,res)=>{
         message: "The createBlog API is created successfully"
     })
 })
+
+//to request data(collection)
+app.get("/blogs",async(req,res)=>{
+    const Blogs = await Blog.find();
+    if(Blogs.length==0){
+        res.json({
+            status: 200,
+            message: "Blogs is Empty"
+        })
+    }
+    else{
+        res.json({
+            status: 200,
+            message: "Blogs is fetched successfully",
+            data: Blogs
+        })
+    }
+})
+
+//to get single blog
+app.get("/blogs/:id", async (req,res)=>{
+    const id = req.params.id; // const {id} = req.params
+    // const blog = await  Blog.find({_id:id});
+    // if(blog.length==0)
+    // {
+    //     res.status(404).json({
+    //         message: `blog with id ${id} is not fetched` 
+    //     })
+    // }
+    // else{
+    //     res.json({
+    //         status:200,
+    //         message: `blog with id ${id} is fetched successfully`,
+    //         data: blog,
+    //     })
+    // }
+
+    //alternate
+    const blog = await Blog.findById(id);
+    if(blog){
+        res.json({
+            status:200,
+            message: `The blog with id ${id} is fetched successfully`
+        })
+    }
+    else{
+        res.json({
+            status:404,
+            message: `The blog with id ${id} is not fetched.`
+        })
+    }
+})
+
+//to start the server at port 3000 and listen the client req
 app.listen(3000,(req,res)=>{
     console.log("Nodejs has started at 3000 port")
 })
