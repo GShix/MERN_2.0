@@ -93,6 +93,22 @@ app.get("/blogs/:id", async (req,res)=>{
     }
 })
 
+//to update the data
+app.patch("/blogs/:id", async (req,res)=>{
+    const id = req.params.id;
+    const title =req.body.title;
+    const subTitle = req.body.subTitle;
+    const description = req.body.description; // descriptio{title,subTitle,description} = req.body
+    await Blog.findByIdAndUpdate(id,{
+        title:title,
+        subTitle: subTitle,
+        description: description
+    })
+    res.json({
+        status:200,
+        message:`Blog with id ${id} is updated successfully`
+    })
+})
 //to start the server at port 3000 and listen the client req
 app.listen(3000,(req,res)=>{
     console.log("Nodejs has started at 3000 port")
