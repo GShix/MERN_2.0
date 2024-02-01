@@ -1,21 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState } from 'react'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
+// import './App.css'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Home from './Pages/Home/Home'
+import Projects from './Pages/Projects/Projects'
+import About from './Pages/About/About'
 
-const myStyle2 = {
-  color:"white"
-}
 function App() {
-  const myStyle = {
-    color:"red"
-  }
-
-  return (
-    <>
-      <h1 style={myStyle}>Dambar Sing Gharti</h1>
-      <h2 style={myStyle2}>Future Web Developer</h2>
-    </>
+  return(
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home/>} />
+      <Route path='/about' element={<About/>} />
+      <Route path='/projects' element={<Projects/>} />
+    </Routes>
+  </BrowserRouter>
   )
 }
 
