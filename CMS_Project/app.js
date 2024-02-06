@@ -1,6 +1,9 @@
 const  express = require("express");
 const app = express();
-
+const cors = require("cors");
+app.use(cors({
+    origin:"http://localhost:5173"
+}))
 //Middleware Setup
 app.use(express.json());
 app.use(express.urlencoded({extended:true})); //Express middleware is used to parse incoming JSON and URL-encoded data
@@ -54,7 +57,7 @@ app.get("/blogs",async(req,res)=>{
         res.json({
             status: 200,
             message: "Blogs is fetched successfully",
-            data: Blogs
+            blogs: Blogs
         })
     }
 })
