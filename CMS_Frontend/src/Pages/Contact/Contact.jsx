@@ -7,7 +7,6 @@ const Contact = () => {
   return (
     <div>
         <Navbar/>
-
   <main>
     <section className="contact">
       <h1>Get in Touch</h1>
