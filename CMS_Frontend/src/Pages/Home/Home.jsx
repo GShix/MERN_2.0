@@ -6,6 +6,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import "./Home.css";
 import axios from "axios";
 import dambar from '../../Components/Navbar/dambar.jpg'
+import MiniNavbar from "../../Components/MiniNavbar/MiniNavbar";
 const Home = () => {
   const [blogs, setBlog] = useState([]);
   //api call
@@ -21,9 +22,9 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-
+      <MiniNavbar/>
       <main>
-        <div className="container">
+        <div className="container1">
           <section className="featured">
             {blogs.map((blog) => {
               return (
