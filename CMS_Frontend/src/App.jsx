@@ -4,11 +4,11 @@
 import './App.css'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Home from './Pages/Home/Home'
-import Projects from './Pages/Projects/Projects'
 import About from './Pages/About/About'
 import Contact from './Pages/Contact/Contact'
 import Test from './Pages/Test/Test'
 import UseEffect from './Pages/UseEffect/UseEffect'
+import Wwithme from './Components/Work With Me/wwithme'
 
 function App() {
   return(
@@ -19,6 +19,7 @@ function App() {
       <Route path='/contact' element={<Contact/>} />
       <Route path='/cart' element={<Test/>} />
       <Route path='/useEffect' element={<UseEffect/>} />
+      <Route path='/workWithMe' element={<Wwithme/>} />
     </Routes>
   </BrowserRouter>
   )

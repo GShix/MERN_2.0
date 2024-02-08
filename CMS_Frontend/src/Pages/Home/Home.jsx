@@ -1,7 +1,6 @@
 // import React from 'react'
 import { useEffect, useState } from "react";
 import Button from "../../Components/Button/Button";
-import Footer from "../../Components/Navbar/Footer";
 import Navbar from "../../Components/Navbar/Navbar";
 import "./Home.css";
 import axios from "axios";
@@ -24,41 +23,20 @@ const Home = () => {
       <Navbar />
       <MiniNavbar/>
       <main>
-        <div className="container1">
           <section className="featured">
             {blogs.map((blog) => {
               return (
                 <article key={blog._id}>
-                  <h2>Featured Post Title</h2>
+                  <h2>{blog.title}</h2>
                   <h3>{blog.subTitle}</h3>
                   <p>
                     {blog.description}
                   </p>
-                  <a href="#">Read More</a>
+                  <a id="more" href="#">Read More</a>
                 </article>
               );
             })}
           </section>
-
-          <section className="blog-posts">
-            <article>
-              <h2>Blog Post Title 1</h2>
-              <p>
-                Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
-                Praesent mauris. Fusce nec tellus sed augue semper porta.
-              </p>
-              <a href="#">Read More</a>
-            </article>
-            <article>
-              <h2>Blog Post Title 2</h2>
-              <p>
-                Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
-                Praesent mauris. Fusce nec tellus sed augue semper porta.
-              </p>
-              <a href="#">Read More</a>
-            </article>
-          </section>
-        </div>
       </main>
 
       <footer>

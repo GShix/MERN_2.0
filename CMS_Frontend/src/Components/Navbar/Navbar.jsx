@@ -2,7 +2,9 @@ import React from 'react'
 import './Navbar.css'
 import logo from './logo.png'
 import Button from '../Button/Button'
+import { useNavigate} from 'react-router-dom'
 const Navbar = () => {
+  const Navigate = useNavigate()
   return (
     <div>
     <div className="container">
@@ -15,7 +17,7 @@ const Navbar = () => {
           <li><a href="/categories">Blog</a></li>
           <li><a href="/categories">Notes</a></li>
           <li><a href="contact">Contact</a></li>
-          <li><a href="about">Work With Me</a></li>
+          <li><a onClick={()=>Navigate('/workWithMe')}>Work With Me</a></li>
           <Button  title="Login" />
           <Button id='regBtn' title="Register" />
 

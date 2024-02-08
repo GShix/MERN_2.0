@@ -4,7 +4,26 @@ body {
   margin: 0;
   padding: 0;
 }
+#more{
+  background-color: royalblue;
+  padding: 10px;
+  border-radius: 6px;
+  color: white;
+}
+article{
+  display: inline-block;
+  padding: 20px;
+  margin: 20px;
+  border: 2px solid royalblue;
+}
+article a {
+  color: #333;
+  text-decoration: none;
+  background-color: #ddd;
+  padding: 5px 10px;
+  border-radius: 5px;
 
+}
 /* Main Content Styles */
 main {
   padding: 20px 0;
@@ -18,32 +37,6 @@ main {
 
 .featured article h2 {
   margin-top: 0;
-}
-
-.blog-posts article {
-  background-color: #f9f9f9;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.blog-posts article h2 {
-  margin-top: 0;
-}
-
-.blog-posts article p {
-  margin-bottom: 10px;
-}
-
-.blog-posts article a {
-  color: #333;
-  text-decoration: none;
-  background-color: #ddd;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.blog-posts article a:hover {
-  background-color: #ccc;
 }
 
 /* Footer Styles */
