@@ -28,7 +28,7 @@ app.get("/",(req,res)=>{
 })
 
 
-app.post("/createBlog",async(req,res)=>{
+app.post("/blogs",async(req,res)=>{
     // console.log(req.body)
     const title =req.body.title;
     const subTitle = req.body.subTitle;
@@ -38,28 +38,20 @@ app.post("/createBlog",async(req,res)=>{
         subTitle: subTitle,
         description: description
     })
-    res.json({
-        status: 200,
-        message: "The createBlog API is created successfully"
+    res.status(201).json({
+        message: "The blog created successfully"
     })
 })
 
 //to request data(collection)
 app.get("/blogs",async(req,res)=>{
     const Blogs = await Blog.find();
-    if(Blogs.length==0){
         res.json({
             status: 200,
-            message: "Blogs is Empty"
+            message: "Blogs are fetched successfully",
+            blogs:Blogs
         })
-    }
-    else{
-        res.json({
-            status: 200,
-            message: "Blogs is fetched successfully",
-            blogs: Blogs
-        })
-    }
+    
 })
 
 //to get single blog
