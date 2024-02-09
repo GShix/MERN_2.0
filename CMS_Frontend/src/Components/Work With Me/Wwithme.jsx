@@ -4,18 +4,14 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 const Wwithme = () => {
   const navigate = useNavigate()
-  const[title,setTitle] =useState('');
-  const[subTitle,setSubTitle] =useState('');
-  const[description,setDescription] =useState('');
-  // console.log(title,subTitle,description) 
+  const [data, setData] = useState({
+    title: '',
+    subTitle: '',
+    description: ''
+  })
   
   const createBlog =async(e)=>{
     e.preventDefault();
-    const data ={
-      title: title,
-      subTitle: subTitle,
-      description: description
-    }
     const response =await axios.post("http://localhost:3000/blogs",data)
     console.log(response)
     if(response.status ==201){
@@ -27,6 +23,14 @@ const Wwithme = () => {
       alert("Sth went wrong")
     }
   }
+    const handleChange =(e)=>{
+      const {name, value} = e.target;
+      setData({
+        ...data,
+        name:value
+      })
+      console.log(name,value)
+    }
 
   return (
     <div>
@@ -35,11 +39,11 @@ const Wwithme = () => {
   <p>Description: This is a simple HTML form with a title, subtitle, and description.</p>
   <form onSubmit={createBlog}>
     <label htmlFor="Title">Title:</label><br/>
-    <input type="text" id="title" placeholder='Enter a Title' onChange={(e)=>setTitle(e.target.value)}/><br/> 
+    <input type="text" id="title" name='title' placeholder='Enter a Title' onChange={handleChange}/><br/> 
     <label htmlFor="SubTitle">Sub Title:</label><br/>
-    <input type="text" id="subtitle" placeholder='Enter a Sub Title' onChange={(e)=>setSubTitle(e.target.value)}/><br/>
+    <input type="text" id="subtitle" name='subTitle' placeholder='Enter a Sub Title' onChange={handleChange}/><br/>
     <label htmlFor="Description">Description:</label><br/>
-    <textarea id="description" placeholder='Enter a Description' onChange={(e)=>setDescription(e.target.value)}></textarea><br/>
+    <textarea id="description" name='description' placeholder='Enter a Description' onChange={handleChange}></textarea><br/>
     <input type="submit" value="Submit"/>
   </form>
 

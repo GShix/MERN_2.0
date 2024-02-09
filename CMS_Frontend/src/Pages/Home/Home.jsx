@@ -5,6 +5,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import "./Home.css";
 import axios from "axios";
 import dambar from '../../Components/Navbar/dambar.jpg'
+import homeImg from './home.jpg'
 import MiniNavbar from "../../Components/MiniNavbar/MiniNavbar";
 const Home = () => {
   const [blogs, setBlog] = useState([]);
@@ -23,6 +24,7 @@ const Home = () => {
       <Navbar />
       <MiniNavbar/>
       <main>
+        <img style={{width:'100vw', height:'100vh'}} src={homeImg }/>
           <section className="featured">
             {blogs.map((blog) => {
               return (
