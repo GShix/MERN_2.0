@@ -27,9 +27,9 @@ const Wwithme = () => {
       const {name, value} = e.target;
       setData({
         ...data,
-        name:value
+      [name]:value
       })
-      console.log(name,value)
+      // console.log(name,value)
     }
 
   return (
