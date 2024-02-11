@@ -77,7 +77,8 @@ app.get("/blogs/:id", async (req,res)=>{
     if(blog){
         res.json({
             status:200,
-            message: `The blog with id ${id} is fetched successfully`
+            message: `The blog with id ${id} is fetched successfully`,
+            blogs:blog
         })
     }
     else{
