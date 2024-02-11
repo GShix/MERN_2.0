@@ -8,7 +8,8 @@ import About from './Pages/About/About'
 import Contact from './Pages/Contact/Contact'
 import Test from './Pages/Test/Test'
 import UseEffect from './Pages/UseEffect/UseEffect'
-import Wwithme from './Components/Work With Me/wwithme'
+import SingleBlog from './Pages/SingleBlog/SingleBlog'
+import Wwithme from './Components/Work With Me/Wwithme'
 
 function App() {
   return(
@@ -20,6 +21,7 @@ function App() {
       <Route path='/cart' element={<Test/>} />
       <Route path='/useEffect' element={<UseEffect/>} />
       <Route path='/workWithMe' element={<Wwithme/>} />
+      <Route path='/singleBlog/:id' element={<SingleBlog/>} />
     </Routes>
   </BrowserRouter>
   )

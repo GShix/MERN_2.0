@@ -7,6 +7,7 @@ import axios from "axios";
 import dambar from '../../Components/Navbar/dambar.jpg'
 import homeImg from './home.jpg'
 import MiniNavbar from "../../Components/MiniNavbar/MiniNavbar";
+import { Link } from "react-router-dom";
 const Home = () => {
   const [blogs, setBlog] = useState([]);
   //api call
@@ -34,7 +35,8 @@ const Home = () => {
                   <p>
                     {blog.description}
                   </p>
-                  <a id="more" href="#">Read More</a>
+                  {/* <Link to={'/singleBlog/'+blog._id}>Read More</Link> */}
+                  <Link to={`/singleBlog/${blog._id}`}>Read More</Link>
                 </article>
               );
             })}
