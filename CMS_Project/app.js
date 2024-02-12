@@ -2,7 +2,8 @@ const  express = require("express");
 const app = express();
 const cors = require("cors");
 app.use(cors({
-    origin:"http://localhost:5173"
+    origin:"http://localhost:5173",
+    methods: ['GET', 'POST', 'PUT', 'DELETE']
 }))
 //Middleware Setup
 app.use(express.json());
@@ -103,6 +104,16 @@ app.patch("/blogs/:id", async (req,res)=>{
     res.json({
         status:200,
         message:`Blog with id ${id} is updated successfully`
+    })
+})
+
+//DELETE API
+app.delete("blogs/:id",async(req,res)=>{
+    // const {id} = req.params.id;
+    const id = req.params.id;
+    await Blog.findByIdAndDelete(id);
+    res.status(200).json({
+        message:`You blog is successfully deleted.`
     })
 })
 //to start the server at port 3000 and listen the client req
