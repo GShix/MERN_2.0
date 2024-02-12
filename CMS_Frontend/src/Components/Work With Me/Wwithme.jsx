@@ -34,6 +34,7 @@ const Wwithme = () => {
 
   return (
     <div>
+      <button onClick={()=>navigate('/')}>Home</button>
   <h1>Title</h1>
   <h2>Subtitle</h2>
   <p>Description: This is a simple HTML form with a title, subtitle, and description.</p>

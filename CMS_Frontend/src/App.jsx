@@ -10,6 +10,7 @@ import Test from './Pages/Test/Test'
 import UseEffect from './Pages/UseEffect/UseEffect'
 import SingleBlog from './Pages/SingleBlog/SingleBlog'
 import Wwithme from './Components/Work With Me/Wwithme'
+import UpdateBlog from './Pages/UpdateBlog/UpdateBlog'
 
 function App() {
   return(
@@ -22,6 +23,7 @@ function App() {
       <Route path='/useEffect' element={<UseEffect/>} />
       <Route path='/workWithMe' element={<Wwithme/>} />
       <Route path='/singleBlog/:id' element={<SingleBlog/>} />
+      <Route path='/update/:id' element={<UpdateBlog/>} />
     </Routes>
   </BrowserRouter>
   )
