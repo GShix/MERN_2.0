@@ -15,6 +15,13 @@ const UpdateBlog = () => {
       [name]:value
     })
   }
+
+  // updateBlog
+  const updateBlog = async(e) =>{
+    e.preventDefault();
+    const response = await axios.patch('http://localhost:3000/blogs/' +id, blog);
+    console.log(response)
+  }
   const fetchSingleBlog = async () => {
     const response = await axios.get("http://localhost:3000/blogs/" + id);
     //    console.log(response)
@@ -25,7 +32,7 @@ const UpdateBlog = () => {
   useEffect(() => {
     fetchSingleBlog();
   }, []);
-  console.log(blog)
+  // console.log(blog)
 
 
   return (
@@ -34,7 +41,7 @@ const UpdateBlog = () => {
       <h1>Title</h1>
       <h2>Subtitle</h2>
       <p>Description: This is a simple HTML form with a title, subtitle, and description.</p>
-      <form>
+      <form  onSubmit={updateBlog}> 
         <label htmlFor="Title">Title:</label><br />
         <input type="text" id="title" value={blog.title} name="title" onChange={handleChange} placeholder="Enter a Title"/><br />
         <label htmlFor="SubTitle">Sub Title:</label><br />
