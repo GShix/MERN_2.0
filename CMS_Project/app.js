@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 app.use(cors({
     origin:"http://localhost:5173",
-    methods: ['GET', 'POST', 'PUT', 'DELETE']
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
 }))
 //Middleware Setup
 app.use(express.json());
@@ -108,7 +108,7 @@ app.patch("/blogs/:id", async (req,res)=>{
 })
 
 //DELETE API
-app.delete("blogs/:id",async(req,res)=>{
+app.delete("/blogs/:id",async(req,res)=>{
     // const {id} = req.params.id;
     const id = req.params.id;
     await Blog.findByIdAndDelete(id);
