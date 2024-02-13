@@ -17,6 +17,10 @@ const UpdateBlog = () => {
   }
 
   // updateBlog
+  const keyToExclude = ['updatedAt', 'createdAt']; // removing extra data(key) from payload
+  keyToExclude.forEach((key)=>{
+    delete blog[key];
+  })
   const updateBlog = async(e) =>{
     e.preventDefault();
     const response = await axios.patch('http://localhost:3000/blogs/' +id, blog);
